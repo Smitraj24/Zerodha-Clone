@@ -1,19 +1,19 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const mongoose = require("mongoose");
 
 const app = express();
 const PORT = process.env.PORT || 3002;
-const uri = process.env.MONGO_URL || 3002;
+const uri = process.env.MONGO_URI;
 
 const bodyParser = require("body-parser");
-const cors = require("cors");
 
 const { HoldingsModel } = require("./model/HoldingsModel");
 const { PositionsModel } = require("./model/PositionsModel");
 const { OrdersModel } = require("./model/OrdersModel");
 
-app.use(cors());
+app.use(cors({ origin: ["http://localhost:3000", "http://localhost:3001"] }));
 app.use(bodyParser.json());
 
 app.get("/allHoldings", async (req, res) => {
@@ -43,4 +43,5 @@ app.listen(PORT, () => {
   console.log("App started!");
   mongoose.connect(uri);
   console.log("DB connected!");
+  console.log(`Server running on port ${PORT}`);
 });
