@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Zerodha Clone
 
 ## Overview
@@ -79,3 +80,6 @@ If you wish to contribute to this project, please fork the repository, create a 
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+=======
+# Zerodha-Clone
+>>>>>>> a5a3065556b6b391ab78b959ab94c7d49f4ec9bd
