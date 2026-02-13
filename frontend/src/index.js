@@ -2,8 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
+
 import HomePage from "./landingPage/home/HomePage";
 import Signup from "./landingPage/signup/SignUp";
+import Login from "./landingPage/login/LogIn"; // new login page
 import AboutPage from "./landingPage/about/AboutPage";
 import ProductPage from "./landingPage/products/ProductsPage";
 import PricingPage from "./landingPage/pricing/PricingPage";
@@ -20,6 +22,7 @@ root.render(
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<Login />} /> {/* added login route */}
       <Route path="/about" element={<AboutPage />} />
       <Route path="/product" element={<ProductPage />} />
       <Route path="/pricing" element={<PricingPage />} />
@@ -27,5 +30,5 @@ root.render(
       <Route path="*" element={<NotFound />} />
     </Routes>
     <Footer />
-  </BrowserRouter>
+  </BrowserRouter>,
 );

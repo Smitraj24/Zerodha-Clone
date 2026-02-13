@@ -16,6 +16,9 @@ const { OrdersModel } = require("./model/OrdersModel");
 app.use(cors({ origin: ["http://localhost:3000", "http://localhost:3001"] }));
 app.use(bodyParser.json());
 
+const authRoutes = require("./routes/auth");
+app.use("/api/auth", authRoutes);
+
 app.get("/allHoldings", async (req, res) => {
   let allHoldings = await HoldingsModel.find({});
   res.json(allHoldings);
